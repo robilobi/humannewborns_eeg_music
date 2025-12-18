@@ -1,9 +1,9 @@
 %% Analysis of erp to note onsets
-% -- Roberta Bianco, Rome Nov 2022
+% -- Roberta Bianco, Rome Nov 2024
 % Load eeg, cut into mini epoch corresponding to the onset of each note
 % Select events (25% highest and lowest IC).
 % RUN IDyOM FIRST
-% Plot the erp and run ttest
+% Plot the erp and run cluster based permutation ttest
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clear all
@@ -163,13 +163,13 @@ for feat = 1:length(features)
     cfg.method           = 'ft_statistics_montecarlo';  % use the Monte Carlo method to calculate probabilities
     cfg.statistic        = 'ft_statfun_depsamplesT';    % use the dependent samples T-statistic as a measure to evaluate the effect at each sample
     cfg.correctm         = 'cluster';
-    cfg.clusteralpha     = 0.1;                        % threshold for the sample-specific test, is used for thresholding
+    cfg.clusteralpha     = 0.05;                        % threshold for the sample-specific test, is used for thresholding
     cfg.clusterstatistic = 'maxsum';
     cfg.clusterthreshold = 'nonparametric_common';
     cfg.minnbchan        = 3;                           % minimum number of neighbouring channels that is required
     cfg.tail             = 0;                           % test the left, right or both tails of the distribution
     cfg.clustertail      = cfg.tail;
-    cfg.alpha            = 0.05;                        % alpha level of the permutation test
+    cfg.alpha            = 0.025;                        % alpha level of the permutation test
     cfg.correcttail      = 'alpha';                     % see https://www.fieldtriptoolbox.org/faq/why_should_i_use_the_cfg.correcttail_option_when_using_statistics_montecarlo/
     cfg.computeprob      = 'yes';
     cfg.numrandomization = 1000;                        % number of random permutations
@@ -188,7 +188,7 @@ for feat = 1:length(features)
 
     %% plots clusters
 
-    lay_mk= load('Layout_Monkey_EEG.mat');
+    lay_mk= load('Layout_Monkey_EEG.mat'); % to select less channel just for visualization
     order_chan = lay_mk.lay.label;
 
     h=figure;clf
@@ -358,5 +358,6 @@ for feat = 1:length(features)
     saveas(gcf, [filename '.png']);
     print([filename '.pdf'],'-dpdf','-bestfit')
     print([filename '.eps'],'-depsc')
+
 
 end
