@@ -8,17 +8,18 @@ Music, human newborns, predictions, surprise, Prediction by Partial Matching (PP
 
 General Description
 ============================
-This set of scripts reports the analysis scripts for eeg data from 49 newborns listening to piano melodies.
+This set of scripts reports the analysis scripts for eeg data from 49 newborns listening to piano melodies. Two sets of the 14 melodies were presented in randomized order within each set. Each baby  listened to at least one repetition of the 14 melodies. Some babies listened to some melodies twice. 
 
 Authors
 ============================
-Bianco, R.1, Tóth, B. 2, Bigand, F. 1, Nguyen, T. 1,3, Sziller I.4, Háden, G.P. 2, Winkler, I. 2, Novembre, G. 1
+BRoberta Bianco1,2, Brigitta Tóth3, Felix Bigand1, Trinh Nguyen1,4, István Sziller5, Gabor P. Háden3, István Winkler3, Giacomo Novembre1
 
 1Neuroscience of Perception and Action Lab, Italian Institute of Technology, Rome, Italy
-2Institute of Cognitive Neuroscience and Psychology, Research Centre for Natural Sciences, Budapest, Hungary
-3Department of Developmental Psychology and Biopsychology, University of Heidelberg, Heidelberg, Germany
-4Division of Obstetrics and Gynaecology at DBC, Szent Imre University Teaching 
-Hospital, Budapest, Hungary
+2Department of Translational Research and of New Surgical and Medical Technologies, University of Pisa, Pisa, Italy
+3Institute of Cognitive Neuroscience and Psychology, HUN-REN Research Centre for Natural Sciences, Budapest, Hungary
+4Department of Developmental and Biological Psychology, University of Heidelberg, Heidelberg, Germany
+5Division of Obstetrics and Gynaecology at DBC, Szent Imre University Teaching Hospital, Budapest, Hungary
+
 
 Summary
 ============================
@@ -36,5 +37,6 @@ Music, macaques, humans, cross-species comparison, predictions, surprise, Predic
 
 USE
 ===========================
-The dataset will be avilable upon publication on the repositiry Dateverse XXX  that contains the eeg data.
+All data and related metadata underlying reported findings are provided as part of the associated publication (Bianco et al PLOS Biology, accepted). 
+
 
