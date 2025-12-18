@@ -1,6 +1,6 @@
 %% Step 1 Bach Newborns: Load EEG and preprocess
 % Steps are Bandpass filtering, Bad channel rejection, ASR,
-% Automatic ICA, Bad channel rejection part 2 and interpolation, 
+% Automatic ICA, Bad channel rejection and interpolation, 
 % Rereferencing 
 %%%%%%%%%%%%%% Roberta Bianco Nov 2023
 
@@ -28,7 +28,7 @@ stim_names = {'audio01','audio02','audio03','audio04','audio05','audio06','audio
 durations = RB_getsonglength(wav_path, stim_names); % in seconds
 
 %% start loop
-subjidx = [1:25 27:41 43:50 55:64]; %those not included have no events FINAL N = 58
+subjidx = [1:25 27:41 43:50 55:64]; %those not included have no events
 nameoutfile = '1-30Hz';
 
 for k = subjidx
@@ -126,5 +126,6 @@ for k = subjidx
     save(strcat(dataOUTfolder,baby_name,'_PROC_', nameoutfile),'data_clean');
 end
 save(strcat(dataOUTfolder,'allbabies','_META'),'Bad_channels', 'Bad_IcaCmp');
+
 
 
